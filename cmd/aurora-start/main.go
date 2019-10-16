@@ -29,14 +29,11 @@ func HandleRequest(ctx context.Context, params StartParams) error {
 		input := &rds.StartDBClusterInput{
 			DBClusterIdentifier: aws.String(identifier),
 		}
-
 		_, err := service.StartDBCluster(input)
 		if err != nil {
 			log.Print(err)
 			return err
 		}
-
-		return nil
 	}
 
 	log.Print("Event Finished!")
